@@ -1,5 +1,5 @@
 const APP_ID = "c450b7b2c08a49f8a6f113482f1e2939"
-const TOKEN = "007eJxTYLh0e6uDzN8C15orG1Yrn7ZRs+yXd9bcXt3z8f+OCJZT82YpMCSbmBokmScZJRtYJJpYplkkmqUZGhqbWBilGaYaWRpbnliqk9EQyMhg9OstMyMDKwMjAxMDiM/AAADZjx7w"
+const TOKEN = "007eJxTYDDYULBr4yXVCqUnBak6HG+Olc/w2nHntP2/HgPLvLN7lqxTYEg2MTVIMk8ySjawSDSxTLNINEszNDQ2sTBKM0w1sjS2tFurk9EQyMhwZUsFEyMDBIL4nAzJ+Tk5iUnxZckMDABaBSKZ"
 const CHANNEL = "collab_vc"
 
 const client = AgoraRTC.createClient({mode:'rtc', codec:'vp8'})
