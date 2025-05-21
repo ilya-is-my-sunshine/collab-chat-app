@@ -54,13 +54,6 @@ button{
     margin-top: 0; /* not needed with fixed */
 }
 
-@media screen and (max-width:1400px){
-    #video-streams{
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        width: 95%;
-    }
-}
-
 .room-tab-container {
   width: 90%;
   margin: 0 auto;
