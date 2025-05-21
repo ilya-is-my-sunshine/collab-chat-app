@@ -42,9 +42,6 @@ let joinStream = async () => {
     document.getElementById('mic-btn').innerText = 'Mic off';
     document.getElementById('mic-btn').style.backgroundColor = '#EE4B2B';
 
-    await localTracks[1].setMuted(true);
-    document.getElementById('camera-btn').innerText = 'Camera off';
-    document.getElementById('camera-btn').style.backgroundColor = '#EE4B2B';
 };
 
 
