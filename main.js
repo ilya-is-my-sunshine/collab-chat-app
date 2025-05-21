@@ -1,11 +1,10 @@
 const APP_ID = "8f63526ca33c47c78240bb456b19c745"
-
-
 const client = AgoraRTC.createClient({mode:'rtc', codec:'vp8'})
 
 let localTracks = []
 let remoteUsers = {}
 let currentRoomCode = '';
+let validRoomCodes = [];
 
 let joinAndDisplayLocalStream = async () => {
 
@@ -32,10 +31,11 @@ let joinStream = async () => {
     const inputCode = document.getElementById("room-input").value.trim();
     currentRoomCode = inputCode || currentRoomCode;
 
-    if (!currentRoomCode) {
-        alert("Please enter or generate a room code.");
-        return;
+    if (!validRoomCodes.includes(inputCode)) {
+    alert("Invalid or unrecognized room code. Please enter a valid code.");
+    return;
     }
+    currentRoomCode = inputCode;
 
     await joinAndDisplayLocalStream();
     document.getElementById('room-tab-container').style.display = 'none';
@@ -122,6 +122,7 @@ function generateRoomCode() {
     code += chars.charAt(Math.floor(Math.random() * chars.length));
   }
 currentRoomCode = code;
+validRoomCodes.push(code);
 document.getElementById("roomCode").innerText = code;
 
 
