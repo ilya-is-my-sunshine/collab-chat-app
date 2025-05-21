@@ -8,9 +8,24 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 <body>
+    <div id="room-tab-container">
+        <div class="header">    
+        <div class="profile">
+            <div class="circle"></div>
+            <span>Username</span>
+        </div>
+        <div class="generate-room">
+            <button id="generate-btn">Generate Room</button>
+            <p class="code-note" id="roomCode">Room Code will be generated here</p>
+        </div>
+        </div>
 
-    <button id="join-btn">Join Stream</button>
-
+        <div class="join-container">
+        <label for="room-code">Room:</label>
+        <input type="text" id="room-input" placeholder="Enter room code">
+        <button id="join-btn">Join Room</button>
+        </div>
+    </div>
     <div id="stream-wrapper">
         <div id="video-streams"></div>
 
