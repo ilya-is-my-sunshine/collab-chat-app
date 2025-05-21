@@ -31,6 +31,16 @@ let joinStream = async () => {
     await joinAndDisplayLocalStream()
     document.getElementById('join-btn').style.display = 'none'
     document.getElementById('stream-controls').style.display = 'flex'
+
+    await localTracks[0].setMuted(true)
+    const micButton = document.getElementById('mic-btn');
+    micButton.innerText = 'Mic off'
+    micButton.style.backgroundColor = '#EE4B2B'
+
+    await localTracks[1].setMuted(true)
+    const camButton = document.getElementById('camera-btn');
+    camButton.innerText = 'Camera off'
+    camButton.style.backgroundColor = '#EE4B2B'
 }
 
 let handleUserJoined = async (user, mediaType) => {
