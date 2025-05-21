@@ -4,7 +4,7 @@ const client = AgoraRTC.createClient({mode:'rtc', codec:'vp8'})
 let localTracks = []
 let remoteUsers = {}
 let currentRoomCode = '';
-let validRoomCodes = [];
+
 
 let joinAndDisplayLocalStream = async () => {
 
@@ -31,10 +31,7 @@ let joinStream = async () => {
     const inputCode = document.getElementById("room-input").value.trim();
     currentRoomCode = inputCode || currentRoomCode;
 
-    if (!validRoomCodes.includes(inputCode)) {
-    alert("Invalid or unrecognized room code. Please enter a valid code.");
-    return;
-    }
+
     currentRoomCode = inputCode;
 
     await joinAndDisplayLocalStream();
