@@ -6,7 +6,6 @@ body{
 
 
 #video-streams{
-<<<<<<< HEAD
     width: 100%;
     height: 100vh;
     display: flex;
@@ -16,13 +15,6 @@ body{
     gap: 20px;
     padding: 10px;
     box-sizing: border-box;
-=======
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    height: 90vh;
-    width: 1400px;
-    margin:0 auto;  
->>>>>>> 7119fe3462b05bf76222ac2b12d595c1d08361c0
 }
 
 .video-container{
@@ -62,11 +54,6 @@ button{
     margin-top: 0; /* not needed with fixed */
 }
 
-<<<<<<< HEAD
-#stream-controls{
-    margin-bottom: 10px;
-}
-=======
 @media screen and (max-width:1400px){
     #video-streams{
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -148,4 +135,3 @@ button{
   background: none;
   cursor: pointer;
 }
->>>>>>> 7119fe3462b05bf76222ac2b12d595c1d08361c0
