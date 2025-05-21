@@ -108,22 +108,8 @@ let toggleCamera = async (e) => {
         e.target.style.backgroundColor = '#EE4B2B'
     }
 }
-function generateRoomCode() {
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-  let code = '';
-  let length = 6;
-  for (let i = 0; i < length; i++) {
-    code += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-currentRoomCode = code;
-validRoomCodes.push(code);
-
-
-}
-
 
 document.getElementById('join-btn').addEventListener('click', joinStream);
 document.getElementById('leave-btn').addEventListener('click', leaveAndRemoveLocalStream);
 document.getElementById('mic-btn').addEventListener('click', toggleMic);
 document.getElementById('camera-btn').addEventListener('click', toggleCamera);
-document.getElementById('generate-btn').addEventListener("click", generateRoomCode);
