@@ -117,7 +117,6 @@ function generateRoomCode() {
   }
 currentRoomCode = code;
 validRoomCodes.push(code);
-document.getElementById("roomCode").innerText = code;
 
 
 }
