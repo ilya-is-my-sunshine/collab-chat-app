@@ -8,21 +8,25 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 <body>
+
     <div id="room-tab-container">
-        <div class="header">    
-        <div class="profile">
-            <div class="circle"></div>
-            <span>Username</span>
+        <header>
+        <div class="logo">
+            <img src="logo.png">
+            <span>Connectaru</span>
         </div>
-
+        <div class="username">Username</div>
+        </header>
+        <main>
+        <div class="join-box">
+            <h2>Room</h2>
+            <input type="text" id = "room-input" placeholder="" />
+            <button id = "join-btn">Join</button>
         </div>
-
-        <div class="join-container">
-        <label for="room-code">Room:</label>
-        <input type="text" id="room-input" placeholder="Enter room code">
-        <button id="join-btn">Join Room</button>
-        </div>
+        </main>
     </div>
+
+
     <div id="stream-wrapper">
         <div id="video-streams"></div>
 
@@ -32,6 +36,8 @@
             <button id="camera-btn">Camera on</button>
         </div>
     </div>
+
+
     
 </body>
 <!-- <script src="https://download.agora.io/sdk/release/AgoraRTC_N.js"></script> -->

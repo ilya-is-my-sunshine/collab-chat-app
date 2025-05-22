@@ -83,7 +83,7 @@ let leaveAndRemoveLocalStream = async () => {
     }
 
     await client.leave()
-    document.getElementById('room-tab-container').style.display = 'block'
+    document.getElementById('room-tab-container').style.display = 'flex'
     document.getElementById('stream-controls').style.display = 'none'
     document.getElementById('video-streams').innerHTML = ''
 }
@@ -119,9 +119,6 @@ function generateRoomCode() {
     code += chars.charAt(Math.floor(Math.random() * chars.length));
   }
 currentRoomCode = code;
-validRoomCodes.push(code);
-
-
 }
 
 
@@ -129,4 +126,3 @@ document.getElementById('join-btn').addEventListener('click', joinStream);
 document.getElementById('leave-btn').addEventListener('click', leaveAndRemoveLocalStream);
 document.getElementById('mic-btn').addEventListener('click', toggleMic);
 document.getElementById('camera-btn').addEventListener('click', toggleCamera);
-document.getElementById('generate-btn').addEventListener("click", generateRoomCode);
