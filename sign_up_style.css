@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -6,7 +7,7 @@
     font-family: 'Poppins',sans-serif;
 }
 body{
-    background: #e4e9f7;
+    background: #171717;
 }
 .container{
     display: flex;
@@ -15,7 +16,7 @@ body{
     min-height: 90vh;
 }
 .box{
-    background: #fdfdfd;
+    background: #293042;
     display: flex;
     flex-direction: column;
     padding: 25px 25px;
@@ -23,29 +24,54 @@ body{
     box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
                 0 32px 64px -48px rgba(0,0,0,0.5);
 }
+
+a{
+    margin: auto;
+    color: #ffffcc;
+    font-weight:400;
+}
+
+.form-box label{
+    color: #ffffcc;
+}
+
+h1 {
+    color: #ffffcc;
+}
+
+hr{
+    border: none; /* Remove default border */
+    height: 3px; /* Set height */
+    background-color: #ffffcc; /* Blue color */
+}
+
 .form-box{
     width: 450px;
     margin: 0px 10px;
+    font-weight: 500;
 }
-.form-box header{
-    font-size: 25px;
-    font-weight: 600;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #e6e6e6;
-    margin-bottom: 10px;
-}
+
 .form-box form .field{
     display: flex;
     margin-bottom: 10px;
     flex-direction: column;
-
 }
+
 .button-container {
     display: flex;
-
-
 }
+
 .form-box form .input input{
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.form-box form .input select{
     height: 40px;
     width: 100%;
     font-size: 16px;
@@ -56,15 +82,16 @@ body{
 }
 .btn{
     height: 35px;
-    background: rgba(76,68,182,0.808);
+    background: #ffffcc;
     border: 0;
     border-radius: 5px;
-    color: #fff;
+    color: #171717;
     font-size: 15px;
     cursor: pointer;
     transition: all .3s;
     margin-top: 10px;
     padding: 0px 10px;
+    font-weight: 700;
 }
 .btn:hover{
     opacity: 0.82;
@@ -139,4 +166,10 @@ main{
     border-radius: 5px;
     margin-bottom: 10px;
     color: red;
+    font-weight: 400;
+}
+
+.error {
+    font-weight: 300;
+    color: rgb(255, 0, 0);
 }
