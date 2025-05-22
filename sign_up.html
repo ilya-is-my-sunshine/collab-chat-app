@@ -15,7 +15,8 @@
                     <label for="username">Username</label>
                     <input 
 					required
-					minlength="1"
+					minlength="3"
+					custommaxlength="20"
 					type="text" 
 					name="username" 
 					id="username" 
@@ -58,7 +59,7 @@
                 </div>
 
 				<div class="field input">
-                    <label for="Security_Question">Security</label>
+                    <label for="Security_Question">Security Question</label>
 					<select name="Security_Question" id="Security_Question" required>
 						<option value="" disabled selected>Select Security Question</option>
 						<option value="1">Where is your hometown?</option>
@@ -66,7 +67,6 @@
 						<option value="3">Who is your favorite anime character?</option>
 					</select>
                 </div>
-
 				<div class="field input">
                     <label for="Security_Answer">Security Answer</label>
                     <input 
@@ -81,10 +81,10 @@
 					<span class="error-icon"></span>
 					<span class="success-icon"></span>
                 </div>
-
                 <div class="field">
                     <input type="submit" class="btn" name="submit" value="Sign Up" required>
                 </div>  
+				<a href="login.html">Already have an account?</a>
             </form>
         </div>
       </div>
