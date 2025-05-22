@@ -1,4 +1,4 @@
-const APP_ID = "8f63526ca33c47c78240bb456b19c745"
+const APP_ID = "fdf017c1de1f4f708ffbae9b57d79485"
 const client = AgoraRTC.createClient({mode:'rtc', codec:'vp8'})
 
 let localTracks = []
