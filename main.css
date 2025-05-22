@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+
 
 #video-streams{
     width: 100%;
@@ -74,6 +77,9 @@ body {
   height: 100vh;
 }
 
+.logo span{
+  font-family: "Audiowide";
+}
 
 #room-tab-container header {
   background-color: #1a1a1a;
@@ -115,7 +121,7 @@ body {
 }
 
 #room-tab-container .join-box {
-  background-color: #77809a;
+  background-color: #293042;
   padding: 40px;
   border-radius: 24px;
   text-align: center;
@@ -134,11 +140,12 @@ body {
   padding: 14px;
   border: 3px solid #ffffcc;
   border-radius: 14px;
-  background-color: #77809a;
-  color: #fff;
-  font-size: 18px;
+  background-color: #293042;
+  color: #ffffcc;
+  font-size: 25px;
   margin-bottom: 20px;
   outline: none;
+  text-align: center;
 }
 
 #room-tab-container .join-box button {
@@ -154,6 +161,6 @@ body {
 }
 
 #room-tab-container .join-box button:hover {
-  background-color: #e6e6b3;
+  background-color: #ffffcc;
 }
 
