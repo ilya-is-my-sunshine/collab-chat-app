@@ -29,7 +29,7 @@ let joinAndDisplayLocalStream = async () => {
 let joinStream = async () => {
     // Get room code from input or previously generated one
     var inputCode = document.getElementById("room-input").value.trim();
-    inputCode = "test";
+    //inputCode = "test";
     currentRoomCode = inputCode || currentRoomCode;
 
 
