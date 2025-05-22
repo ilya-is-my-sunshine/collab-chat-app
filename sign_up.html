@@ -3,8 +3,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login_style.css">
-    <title>Sign Up for BitMeet</title>
+    <link rel="stylesheet" href="sign_up_style.css">
+    <title>Sign Up for Connectaru</title>
 </head>
 <body>
       <div class="container">
@@ -40,6 +40,48 @@
 					<span class="error-icon"></span>
 					<span class="success-icon"></span>
                 </div>
+
+				<div class="field input">
+                    <label for="confirm_Password">Confirm Password</label>
+                    <input 
+					required
+					minlength="1"
+					type="password" 
+					name="confirm_password"
+					id="confirm_password" 
+					match="password"
+					autocomplete="off" 
+					/>
+					<span style="color: red;" class="error"></span>
+					<span class="error-icon"></span>
+					<span class="success-icon"></span>
+                </div>
+
+				<div class="field input">
+                    <label for="Security_Question">Security</label>
+					<select name="Security_Question" id="Security_Question" required>
+						<option value="" disabled selected>Select Security Question</option>
+						<option value="1">Where is your hometown?</option>
+						<option value="2">What is your pet's name?</option>
+						<option value="3">Who is your favorite anime character?</option>
+					</select>
+                </div>
+
+				<div class="field input">
+                    <label for="Security_Answer">Security Answer</label>
+                    <input 
+					required
+					minlength="1"
+					type="text" 
+					name="Security_Answer"
+					id="Security_Answer" 
+					autocomplete="off" 
+					/>
+					<span style="color: red;" class="error"></span>
+					<span class="error-icon"></span>
+					<span class="success-icon"></span>
+                </div>
+
                 <div class="field">
                     <input type="submit" class="btn" name="submit" value="Sign Up" required>
                 </div>  
@@ -82,7 +124,8 @@
 			errorMessage: (input, label) => {
 				const matchSelector = input.getAttribute('match');
 				const matchedElement = formElement.querySelector(`#${matchSelector}`);
-				return `${label.textContent} should match password`;
+				//return `${label.textContent} should match password`;
+				return `passwords should match`;
 			},
 		},
 		{
