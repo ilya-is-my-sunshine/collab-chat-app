@@ -28,8 +28,16 @@
 
 
     <div id="stream-wrapper">
-        <div id="textChat"></div>
-        <div id="video-streams"></div>
+        <div id="text-chat-handler">
+            <div id="video-streams"></div>
+            <div id="textChatContainer"></div>
+            <div id="textChat">
+                <div id="allChatContainer"></div>
+                <div id="userChatContainer">
+                    <input type="text"><button id="sendBtn"></button>   
+                </div>
+            </div>
+        </div>
         <div id="stream-controls">
             <button id="leave-btn">Leave Stream</button>
             <button id="mic-btn">Mic On</button>

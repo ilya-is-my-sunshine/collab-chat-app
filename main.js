@@ -28,7 +28,8 @@ let joinAndDisplayLocalStream = async () => {
 
 let joinStream = async () => {
     // Get room code from input or previously generated one
-    const inputCode = document.getElementById("room-input").value.trim();
+    var inputCode = document.getElementById("room-input").value.trim();
+    inputCode = "test";
     currentRoomCode = inputCode || currentRoomCode;
 
 
@@ -37,7 +38,9 @@ let joinStream = async () => {
     await joinAndDisplayLocalStream();
     document.getElementById('room-tab-container').style.display = 'none';
     document.getElementById('stream-controls').style.display = 'flex';
-
+    document.getElementById('stream-wrapper').style.height = "100%";
+    document.getElementById('stream-wrapper').style.width = "100%";
+    document.getElementById('stream-wrapper').style.display = "grid";
     await localTracks[0].setMuted(true);
     document.getElementById('mic-btn').innerText = 'Mic off';
     document.getElementById('mic-btn').style.backgroundColor = '#EE4B2B';
@@ -82,6 +85,9 @@ let leaveAndRemoveLocalStream = async () => {
     await client.leave()
     document.getElementById('room-tab-container').style.display = 'flex'
     document.getElementById('stream-controls').style.display = 'none'
+    document.getElementById('stream-wrapper').style.height = "0";
+    document.getElementById('stream-wrapper').style.width = "0";
+    document.getElementById('stream-wrapper').style.display = "none";
     document.getElementById('video-streams').innerHTML = ''
 }
 
