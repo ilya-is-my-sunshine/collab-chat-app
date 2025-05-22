@@ -42,9 +42,6 @@ let joinStream = async () => {
     document.getElementById('mic-btn').innerText = 'Mic off';
     document.getElementById('mic-btn').style.backgroundColor = '#EE4B2B';
 
-    await localTracks[1].setMuted(true);
-    document.getElementById('camera-btn').innerText = 'Camera off';
-    document.getElementById('camera-btn').style.backgroundColor = '#EE4B2B';
 };
 
 
@@ -111,15 +108,8 @@ let toggleCamera = async (e) => {
         e.target.style.backgroundColor = '#EE4B2B'
     }
 }
-function generateRoomCode() {
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-  let code = '';
-  let length = 6;
-  for (let i = 0; i < length; i++) {
-    code += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-currentRoomCode = code;
-}
+
+
 
 
 document.getElementById('join-btn').addEventListener('click', joinStream);
