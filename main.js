@@ -8,15 +8,15 @@ let username = '';
 const socket = io('https://video-chat-server-8i0f.onrender.com');
 
 
-document.getElementById('send-btn').addEventListener('click', () => {
-    const message = document.getElementById('chat-input').value.trim();
+document.getElementById('sendBtn').addEventListener('click', () => {
+    const message = document.getElementById('chatInput').value.trim();
     if (message) {
         socket.emit('send-message', {
             roomCode: currentRoomCode,
             message,
             username
         });
-        document.getElementById('chat-input').value = '';
+        document.getElementById('chatInput').value = '';
     }
 });
 
@@ -26,7 +26,7 @@ socket.on('receive-message', ({ message, username }) => {
 });
 
 function appendMessage(msg) {
-    const chatBox = document.getElementById('chat-box');
+    const chatBox = document.getElementById('allChatContainer');
     const messageElem = document.createElement('div');
     messageElem.innerText = msg;
     chatBox.appendChild(messageElem);
@@ -92,7 +92,6 @@ let joinStream = async () => {
     document.getElementById('stream-wrapper').style.height = "100%";
     document.getElementById('stream-wrapper').style.width = "100%";
     document.getElementById('stream-wrapper').style.display = "grid";
-    document.getElementById('chat-container').style.display = 'block'; // Show chat box
 
     socket.emit('join-room', { roomCode: currentRoomCode, username });
 

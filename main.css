@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+#text-chat-handler{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 30%;
+}
+
 #textChat{
   height: 96%;
   width: 25%;
@@ -15,7 +22,13 @@
 
 #allChatContainer{
   height: 90%;
-  width: 100%;
+  width: 100%;      /* adjust as needed */
+  overflow-y: auto;         /* scroll if content exceeds height */
+  padding: 10px;
+  word-wrap: break-word;    /* force long words to wrap */
+  white-space: pre-wrap;    /* preserve new lines and wrap text */
+  box-sizing: border-box;
+  padding: 30px;
 }
 
 #userChatContainer{
