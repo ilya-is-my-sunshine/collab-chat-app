@@ -4,6 +4,53 @@ const client = AgoraRTC.createClient({mode:'rtc', codec:'vp8'})
 let localTracks = []
 let remoteUsers = {}
 let currentRoomCode = '';
+let username = '';
+const socket = io('https://video-chat-server-8i0f.onrender.com');
+
+
+document.getElementById('send-btn').addEventListener('click', () => {
+    const message = document.getElementById('chat-input').value.trim();
+    if (message) {
+        socket.emit('send-message', {
+            roomCode: currentRoomCode,
+            message,
+            username
+        });
+        document.getElementById('chat-input').value = '';
+    }
+});
+
+
+socket.on('receive-message', ({ message, username }) => {
+    appendMessage(`${username}: ${message}`);
+});
+
+function appendMessage(msg) {
+    const chatBox = document.getElementById('chat-box');
+    const messageElem = document.createElement('div');
+    messageElem.innerText = msg;
+    chatBox.appendChild(messageElem);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 let joinAndDisplayLocalStream = async () => {
@@ -27,22 +74,33 @@ let joinAndDisplayLocalStream = async () => {
 }
 
 let joinStream = async () => {
-    // Get room code from input or previously generated one
-    const inputCode = document.getElementById("room-input").value.trim();
+    var inputCode = document.getElementById("room-input").value.trim();
+    var inputName = document.getElementById("username-input").value.trim();
+
+    if (!inputName) {
+        alert("Please enter your name.");
+        return;
+    }
+
     currentRoomCode = inputCode || currentRoomCode;
-
-
-    currentRoomCode = inputCode;
+    username = inputName;
 
     await joinAndDisplayLocalStream();
+
     document.getElementById('room-tab-container').style.display = 'none';
     document.getElementById('stream-controls').style.display = 'flex';
+    document.getElementById('stream-wrapper').style.height = "100%";
+    document.getElementById('stream-wrapper').style.width = "100%";
+    document.getElementById('stream-wrapper').style.display = "grid";
+    document.getElementById('chat-container').style.display = 'block'; // Show chat box
+
+    socket.emit('join-room', { roomCode: currentRoomCode, username });
 
     await localTracks[0].setMuted(true);
     document.getElementById('mic-btn').innerText = 'Mic off';
     document.getElementById('mic-btn').style.backgroundColor = '#EE4B2B';
-
 };
+
 
 
 let handleUserJoined = async (user, mediaType) => {
@@ -82,6 +140,9 @@ let leaveAndRemoveLocalStream = async () => {
     await client.leave()
     document.getElementById('room-tab-container').style.display = 'flex'
     document.getElementById('stream-controls').style.display = 'none'
+    document.getElementById('stream-wrapper').style.height = "0";
+    document.getElementById('stream-wrapper').style.width = "0";
+    document.getElementById('stream-wrapper').style.display = "none";
     document.getElementById('video-streams').innerHTML = ''
 }
 

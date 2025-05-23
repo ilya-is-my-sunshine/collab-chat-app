@@ -6,8 +6,20 @@
     <title>Connectaru</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+
 </head>
 <body>
+        <!-- Add this inside your body tag -->
+    <div id="chat-container" style="display: none; margin-top: 10px;">
+    <div id="chat-box" style="height: 200px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;"></div>
+    <input type="text" id="chat-input" placeholder="Type a message..." style="width: 70%;" />
+    <button id="send-btn">Send</button>
+    </div>
+
+    <!-- Add username input near your room join form -->
+    <input type="text" id="username-input" placeholder="Enter your name" />
+
 
     <div id="room-tab-container">
         <header>
