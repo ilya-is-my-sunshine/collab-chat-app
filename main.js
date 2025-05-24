@@ -21,34 +21,42 @@ document.getElementById('sendBtn').addEventListener('click', () => {
 });
 
 
-socket.on('receive-message', ({ message, username }) => {
-    appendMessage(`${username}: ${message}`);
+socket.on('receive-message', ({ message, username: sender }) => {
+    const isOwn = sender === username;
+    appendMessage(message, sender, isOwn);
 });
 
-function appendMessage(msg) {
+
+function appendMessage(msg, sender, isOwnMessage = false) {
     const chatBox = document.getElementById('allChatContainer');
+    
+    // Wrapper aligns message left or right
+    const wrapper = document.createElement('div');
+    wrapper.style.display = 'flex';
+    wrapper.style.justifyContent = isOwnMessage ? 'flex-end' : 'flex-start';
+
+    // Inner wrapper stacks name and bubble vertically
+    const messageWrapper = document.createElement('div');
+    messageWrapper.className = 'messageWrapper';
+
+    // Sender name
+    const senderElem = document.createElement('div');
+    senderElem.className = 'senderName';
+    senderElem.innerText = sender;
+
+    // Message bubble
     const messageElem = document.createElement('div');
+    messageElem.className = 'messageElem';
     messageElem.innerText = msg;
-    chatBox.appendChild(messageElem);
+
+    // Assemble message parts
+    messageWrapper.appendChild(senderElem);
+    messageWrapper.appendChild(messageElem);
+    wrapper.appendChild(messageWrapper);
+    chatBox.appendChild(wrapper);
+
     chatBox.scrollTop = chatBox.scrollHeight;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -64,8 +72,9 @@ let joinAndDisplayLocalStream = async () => {
     localTracks = await AgoraRTC.createMicrophoneAndCameraTracks() 
 
     let player = `<div class="video-container" id="user-container-${UID}">
-                        <div class="video-player" id="user-${UID}"></div>
-                  </div>`
+                    <div class="video-player" id="user-${UID}"></div>
+                </div>`;
+
     document.getElementById('video-streams').insertAdjacentHTML('beforeend', player)
 
     localTracks[1].play(`user-${UID}`)
@@ -114,7 +123,7 @@ let handleUserJoined = async (user, mediaType) => {
 
         player = `<div class="video-container" id="user-container-${user.uid}">
                         <div class="video-player" id="user-${user.uid}"></div> 
-                 </div>`
+                 </div>`;
         document.getElementById('video-streams').insertAdjacentHTML('beforeend', player)
 
         user.videoTrack.play(`user-${user.uid}`)
@@ -143,6 +152,8 @@ let leaveAndRemoveLocalStream = async () => {
     document.getElementById('stream-wrapper').style.width = "0";
     document.getElementById('stream-wrapper').style.display = "none";
     document.getElementById('video-streams').innerHTML = ''
+    document.getElementById('allChatContainer').innerHTML = '';
+
 }
 
 let toggleMic = async (e) => {
