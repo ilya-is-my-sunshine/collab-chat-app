@@ -73,6 +73,7 @@
                     <input 
 					required
 					minlength="1"
+					custommaxlength="40"
 					type="text" 
 					name="Security_Answer"
 					id="Security_Answer" 

@@ -84,7 +84,7 @@ let joinAndDisplayLocalStream = async () => {
 
 let joinStream = async () => {
     var inputCode = document.getElementById("room-input").value.trim();
-    var inputName = document.getElementById("username-input").value.trim();
+    var inputName = SessionData.username;
 
     if (!inputName) {
         alert("Please enter your name.");

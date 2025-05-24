@@ -257,6 +257,18 @@ body {
   outline: none;
   text-align: center;
 }
+#room-tab-container .join-box input #logout-btn{
+  width: 100%;
+  padding: 14px;
+  border: 3px solid #ffffcc;
+  border-radius: 14px;
+  background-color: #293042;
+  color: #ffffcc;
+  font-size: 25px;
+  margin-bottom: 20px;
+  outline: none;
+  text-align: center;
+}
 
 #room-tab-container .join-box button {
   background-color: #ffffcc;

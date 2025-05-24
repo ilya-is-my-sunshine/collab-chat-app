@@ -167,10 +167,10 @@ main{
 }
 .message{
     text-align: center;
-    background: #f9eded;
+    background: #ffb8b8;
     padding: 15px 0px;
-    border:1px solid #699053;
+    border:2px solid #ff1818;
     border-radius: 5px;
     margin-bottom: 10px;
-    color: red;
+    color: rgb(252, 41, 41);
 }
