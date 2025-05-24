@@ -32,8 +32,25 @@
             <button id="camera-btn">Camera on</button>
         </div>
     </div>
-    
+    <!-- Chat toggle icon (initially hidden) -->
+<button id="chatToggleBtn" style="display:none; position: fixed; bottom: 20px; right: 20px; z-index: 1001;">
+  💬 Chat
+</button>
+
+<!-- Chat sidebar -->
+<div id="chatSidebar" class="chat-sidebar">
+  <div class="chat-header">
+    <h3>Chat</h3>
+    <button id="chatCloseBtn">✖</button>
+  </div>
+  <div id="chatMessages" class="chat-messages"></div>
+  <form id="chatForm">
+    <input id="chatInput" autocomplete="off" placeholder="Type a message..." />
+    <button type="submit">Send</button>
+  </form>
+</div>
 </body>
+
 <!-- <script src="https://download.agora.io/sdk/release/AgoraRTC_N.js"></script> -->
 <script src="AgoraRTC_N-4.7.3.js"></script>
 <script src='main.js'></script>
