@@ -12,6 +12,7 @@ $_SESSION['recovery_user_details']='';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login_style.css">
+    <link rel="icon" href="logo.png" type="image/png">
     <title>Login</title>
 </head>
 

@@ -14,6 +14,7 @@ if (!isset($_SESSION['Sesh'])){
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Connectaru</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" href="logo.png" type="image/png">
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
 </head>
