@@ -85,17 +85,19 @@
 #userChatContainer input{
   height: 70%;
   width: 70%;
-  border-radius: 15px;
-  background-color: white;
+  border-radius: 10px;
+  color: #ffffcc;
+  background-color: #1e1e1e;
   border: 2px solid #ffffcc;
   font-size: 16px;
-  padding: 0 10px;
+  padding: 3px 10px;
+  margin: 3px;
 }
 
 #userChatContainer button{
   height: 70%;
   width: 30%;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 #stream-wrapper{
@@ -135,6 +137,9 @@ button{
     border:none;
     padding:10px 8px;
     background-color: transparent;  
+}
+button:hover{
+  filter: brightness(80%);
 }
 
 #stream-controls{
@@ -182,6 +187,8 @@ button{
   display: none;
 }
 
+
+ 
 
 #chatIconContainer {
   position: fixed;
@@ -330,19 +337,20 @@ body {
 #sendBtn {
   font-size: 16px;
   font-weight: bold;
-  color: #8f1b1b ;
-  background-color: #ffffcc;
+  color: #ffffcc ;
+  background-color: #293042;
   border-radius: 15px;
-  border: 2px solid #ffffcc;
   visibility: visible;
   display: inline-block;
 }
+
 #chatHeader {
-    display: flex;
+    display: block;
     justify-content: space-between;
     align-items: center;
     background-color: #2a2a2a;
-    color: #fff;
+    text-align: center;
+    color: #ffffcc;
     padding: 10px;
     font-weight: bold;
     border-bottom: 1px solid #444;

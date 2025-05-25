@@ -56,9 +56,9 @@ if (!isset($_SESSION['Sesh'])){
         <button id="messageIconBtn">💬</button>
     </div>
     <div id="textChat">
-        <div id="chatHeader">
-            Chat Room
-            <button id="closeChatBtn" title="Close Chat">×</button>
+        <div id = "chatHeader">
+        Chat Room
+        <button id="closeChatBtn" title="Close Chat">×</button>
         </div>
         <div id="allChatContainer"></div>
         <div id="userChatContainer">
