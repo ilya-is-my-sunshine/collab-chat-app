@@ -45,7 +45,7 @@ if (!isset($_SESSION['Sesh'])){
                 <img src="logo.png">
                 <span>Connectaru</span>
             </div>
-            <div class="username" id="username_placeholder">Username</div>
+            <div class="username" id="username_placehold">Username</div>
         </header>
         <main>
         <div id="text-chat-handler">
@@ -84,6 +84,7 @@ if (!isset($_SESSION['Sesh'])){
     const SessionData = <?php echo json_encode($SessionData); ?>;
     console.log(SessionData.username);
     document.getElementById('username_placeholder').innerHTML=SessionData.username;        
+    document.getElementById('username_placehold').innerHTML=SessionData.username;        
 </script>
 <script src='main.js'></script>
 </html>

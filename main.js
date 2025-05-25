@@ -70,6 +70,7 @@ function appendMessage(msg, sender, isOwnMessage = false) {
     wrapper.appendChild(messageWrapper);
     chatBox.appendChild(wrapper);
     messageWrapper.appendChild(timeElem);
+
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
@@ -78,11 +79,18 @@ document.getElementById('messageIconBtn').addEventListener('click', () => {
     chatTab.style.display = chatTab.style.display === 'none' ? 'flex' : 'none';
     document.getElementById('textChat').style.display = 'flex';
     document.getElementById('messageIconBtn').style.display = 'none';
+    document.getElementById('textChatContainer').style.display = 'block'; 
+    document.getElementById('text-chat-handler').style.gridTemplateColumns = "1fr 30%";
+    document.getElementById('stream-controls').style.left = '35%'; 
 });
+
 
 document.getElementById('closeChatBtn').addEventListener('click', () => {
     document.getElementById('textChat').style.display = 'none';
     document.getElementById('messageIconBtn').style.display = 'flex';
+    document.getElementById('textChatContainer').style.display = 'none'; 
+    document.getElementById('text-chat-handler').style.gridTemplateColumns = "1fr"; 
+    document.getElementById('stream-controls').style.left = '50%'; 
 });
 
 
