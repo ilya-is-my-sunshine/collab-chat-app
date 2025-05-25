@@ -40,6 +40,14 @@ if (!isset($_SESSION['Sesh'])){
     
 
     <div id="stream-wrapper">
+        <header>
+            <div class="logo">
+                <img src="logo.png">
+                <span>Connectaru</span>
+            </div>
+            <div class="username" id="username_placeholder">Username</div>
+        </header>
+        <main>
         <div id="text-chat-handler">
             <div id="video-streams"></div>
             <div id="textChatContainer"></div>
@@ -49,6 +57,7 @@ if (!isset($_SESSION['Sesh'])){
             <button id="mic-btn"><image id = "micbtn" src = "micoff.png" height = "70vw"></button>
             <button id="camera-btn"><image image id = "camerabtn" src = "camera.png" height = "70vw"></button>
         </div>
+    </main>
     </div>
 
 

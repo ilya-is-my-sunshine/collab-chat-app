@@ -45,7 +45,7 @@
   color: #1e1e1e;
 }
 #text-chat-handler{
-  height: 100%;
+  height: 82%;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 30%;
@@ -101,9 +101,10 @@
 }
 
 #stream-wrapper{
-  height: 0;
-  width: 0;
+  flex-direction: column;
+  height: 100vh;
   display: none;
+  gap: 0;
 }
 
 #video-streams{
@@ -243,36 +244,52 @@ body {
   background-color: #1a1a1a;
   padding: 20px 40px;
   display: flex;
+  height: 8vh;
+  justify-content: space-between;
+  align-items: center;
+}
+#stream-wrapper header{
+  background-color: #1a1a1a;
+  padding: 20px 40px;
+  display: flex;
+  height: 8vh;
   justify-content: space-between;
   align-items: center;
 }
 
-#room-tab-container .logo {
+.logo {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-#room-tab-container .logo img {
+.logo img {
   height: 32px;
 }
 
-#room-tab-container .logo span {
+.logo span {
   font-size: 28px;
   font-weight: bold;
   color: #fff;
   text-shadow: 1px 1px #000;
 }
 
-#room-tab-container .username {
+.username {
   font-size: 20px;
   font-weight: bold;
   color: #ffffcc;
   text-shadow: 1px 1px #000;
 }
-
+#stream-wrapper main {
+  display: flex;
+  height: 92vh;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
 #room-tab-container main {
   display: flex;
+  height: 92vh;
   justify-content: center;
   align-items: center;
   flex-grow: 1;

@@ -127,7 +127,7 @@ let joinStream = async () => {
 
     await joinAndDisplayLocalStream();
 
-    document.getElementById('main').style.display = 'none';
+    document.getElementById('room-tab-container').style.display = 'none';
     document.getElementById('stream-controls').style.display = 'flex';
     document.getElementById('stream-wrapper').style.height = "100%";
     document.getElementById('stream-wrapper').style.width = "100%";
@@ -182,7 +182,7 @@ let leaveAndRemoveLocalStream = async () => {
 
     await client.leave()
     document.getElementById('camerabtn').src= "camera.png";
-    document.getElementById('main').style.display = 'flex'
+    document.getElementById('room-tab-container').style.display = 'flex'
     document.getElementById('stream-controls').style.display = 'none'
     document.getElementById('stream-wrapper').style.height = "0";
     document.getElementById('stream-wrapper').style.width = "0";
