@@ -143,9 +143,6 @@ let joinStream = async () => {
     document.getElementById('messageIconBtn').style.display = 'flex';
     document.getElementById('textChat').style.display = 'flex';
     document.getElementById('messageIconBtn').style.display = 'none';
-    document.getElementById('textChatContainer').style.display = 'block'; 
-    document.getElementById('text-chat-handler').style.gridTemplateColumns = "1fr 30%";
-    document.getElementById('stream-controls').style.left = '35%'; 
     socket.emit('join-room', { roomCode: currentRoomCode, username });
 
     await localTracks[0].setMuted(true);
@@ -232,5 +229,3 @@ document.getElementById('join-btn').addEventListener('click', joinStream);
 document.getElementById('leave-btn').addEventListener('click', leaveAndRemoveLocalStream);
 document.getElementById('mic-btn').addEventListener('click', toggleMic);
 document.getElementById('camera-btn').addEventListener('click', toggleCamera);
-
-
