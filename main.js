@@ -47,7 +47,7 @@ function appendMessage(msg, sender, isOwnMessage = false) {
     const senderElem = document.createElement('div');
     senderElem.className = 'senderName';
 
-    senderElem.innerText = isOwnMessage ? 'you' : sender;
+    senderElem.innerText = isOwnMessage ? 'You' : sender;
 
     senderElem.style.textAlign = isOwnMessage ? 'right' : 'left';
     senderElem.style.fontWeight = 'bold';
