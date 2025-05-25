@@ -80,6 +80,7 @@ document.getElementById('messageIconBtn').addEventListener('click', () => {
     document.getElementById('messageIconBtn').style.display = 'none';
 });
 
+
 document.getElementById('closeChatBtn').addEventListener('click', () => {
     document.getElementById('textChat').style.display = 'none';
     document.getElementById('messageIconBtn').style.display = 'flex';
