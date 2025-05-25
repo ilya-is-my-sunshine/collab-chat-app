@@ -20,6 +20,13 @@ document.getElementById('sendBtn').addEventListener('click', () => {
     }
 });
 
+document.getElementById('chatInput').addEventListener('keydown', function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); 
+        document.getElementById('sendBtn').click();
+    }
+});
+
 
 socket.on('receive-message', ({ message, username: sender }) => {
     const isOwn = sender === username;
@@ -58,6 +65,20 @@ function appendMessage(msg, sender, isOwnMessage = false) {
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
+document.getElementById('messageIconBtn').addEventListener('click', () => {
+    const chatTab = document.getElementById('textChat');
+    chatTab.style.display = chatTab.style.display === 'none' ? 'flex' : 'none';
+});
+
+document.getElementById('messageIconBtn').addEventListener('click', () => {
+    document.getElementById('textChat').style.display = 'flex';
+    document.getElementById('messageIconBtn').style.display = 'none';
+});
+
+document.getElementById('closeChatBtn').addEventListener('click', () => {
+    document.getElementById('textChat').style.display = 'none';
+    document.getElementById('messageIconBtn').style.display = 'flex';
+});
 
 
 
@@ -71,13 +92,16 @@ let joinAndDisplayLocalStream = async () => {
 
     localTracks = await AgoraRTC.createMicrophoneAndCameraTracks() 
 
-    let player = `<div class="video-container" id="user-container-${UID}">
-                    <div class="video-player" id="user-${UID}"></div>
-                </div>`;
+    let player = `
+    <div class="video-container" id="user-container-${UID}">
+        <div class="video-player" id="user-${UID}"></div>
+    </div>
+`;
+
 
     document.getElementById('video-streams').insertAdjacentHTML('beforeend', player)
 
-    localTracks[1].play(`user-${UID}`)
+localTracks[1].play(`user-${UID}`);
     
     await client.publish([localTracks[0], localTracks[1]])
 }
@@ -90,6 +114,7 @@ let joinStream = async () => {
         alert("Please enter your name.");
         return;
     }
+    document.getElementById('messageIconBtn').style.display = 'flex'; 
 
     currentRoomCode = inputCode || currentRoomCode;
     username = inputName;
@@ -101,7 +126,7 @@ let joinStream = async () => {
     document.getElementById('stream-wrapper').style.height = "100%";
     document.getElementById('stream-wrapper').style.width = "100%";
     document.getElementById('stream-wrapper').style.display = "grid";
-
+    document.getElementById('messageIconBtn').style.display = 'flex'; 
     socket.emit('join-room', { roomCode: currentRoomCode, username });
 
     await localTracks[0].setMuted(true);
@@ -116,17 +141,20 @@ let handleUserJoined = async (user, mediaType) => {
     await client.subscribe(user, mediaType)
 
     if (mediaType === 'video'){
-        let player = document.getElementById(`user-container-${user.uid}`)
+        let player = document.getElementById(`user-container-${user.uid}`);
         if (player != null){
             player.remove()
         }
 
-        player = `<div class="video-container" id="user-container-${user.uid}">
-                        <div class="video-player" id="user-${user.uid}"></div> 
-                 </div>`;
+        player = `
+  <div class="video-container" id="user-container-${user.uid}">
+    <div class="video-player" id="user-${user.uid}"></div> 
+  </div>
+`;
+
         document.getElementById('video-streams').insertAdjacentHTML('beforeend', player)
 
-        user.videoTrack.play(`user-${user.uid}`)
+        user.videoTrack.play(`user-${user.uid}`);
     }
 
     if (mediaType === 'audio'){
@@ -136,7 +164,7 @@ let handleUserJoined = async (user, mediaType) => {
 
 let handleUserLeft = async (user) => {
     delete remoteUsers[user.uid]
-    document.getElementById(`user-container-${user.uid}`).remove()
+    document.getElementById(`user-container-${user.uid}`).remove();
 }
 
 let leaveAndRemoveLocalStream = async () => {
@@ -153,7 +181,8 @@ let leaveAndRemoveLocalStream = async () => {
     document.getElementById('stream-wrapper').style.display = "none";
     document.getElementById('video-streams').innerHTML = ''
     document.getElementById('allChatContainer').innerHTML = '';
-
+    document.getElementById('messageIconBtn').style.display = 'none'; 
+    document.getElementById('textChat').style.display = 'none'; 
 }
 
 let toggleMic = async (e) => {
@@ -187,3 +216,4 @@ document.getElementById('join-btn').addEventListener('click', joinStream);
 document.getElementById('leave-btn').addEventListener('click', leaveAndRemoveLocalStream);
 document.getElementById('mic-btn').addEventListener('click', toggleMic);
 document.getElementById('camera-btn').addEventListener('click', toggleCamera);
+

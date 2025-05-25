@@ -18,10 +18,6 @@ if (!isset($_SESSION['Sesh'])){
     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
 </head>
 <body>
-        <!-- Add this inside your body tag -->
-
-
-    <!-- Add username input near your room join form -->
 
 
     <div id="room-tab-container">
@@ -49,21 +45,29 @@ if (!isset($_SESSION['Sesh'])){
         <div id="text-chat-handler">
             <div id="video-streams"></div>
             <div id="textChatContainer"></div>
-            <div id="textChat">
-                <div id="chatHeader">Chat Room</div>
-                <div id="allChatContainer"></div>
-                <div id="userChatContainer">
-                    <input id = "chatInput" type="text"><button id="sendBtn"></button>   
-                </div>
-            </div>
         </div>
         <div id="stream-controls">
-            <button id="leave-btn">Leave Stream</button>
+            <button id="leave-btn">Leave Stream</button>    
             <button id="mic-btn">Mic On</button>
             <button id="camera-btn">Camera on</button>
         </div>
     </div>
-    
+   <div id="chatIconContainer">
+    <button id="messageIconBtn">💬</button>
+</div>
+<div id="textChat">
+    <div id="chatHeader">
+        Chat Room
+        <button id="closeChatBtn" title="Close Chat">×</button>
+    </div>
+    <div id="allChatContainer"></div>
+    <div id="userChatContainer">
+        <input id="chatInput" type="text" placeholder="Type a message...">
+        <button id="sendBtn">Send</button> 
+    </div>
+</div>
+
+
 </body>
 <!-- <script src="https://download.agora.io/sdk/release/AgoraRTC_N.js"></script> -->
 <script src="AgoraRTC_N-4.23.3.js"></script>
