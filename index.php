@@ -29,10 +29,10 @@ if (!isset($_SESSION['Sesh'])){
         <main>
         <div class="join-box">
             <h2>Room</h2>
-            <input type="text" id = "room-input" placeholder="" />
+            <input type="text" id = "room-input" placeholder="insert unique room code here..."/>
             <button id = "join-btn">Join Room</button>
             <form action="logout.php" method="post">
-                <input id="logout-btn" type="submit" value="Logout">
+                <button id="logout-btn" type="submit">Logout</button>
             </form>
         </div>
         </main>
