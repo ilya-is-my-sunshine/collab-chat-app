@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['Sesh'])){
-	header("Location: /collab-chat-app/index.html");
+	header("Location: index.php");
 }
 ?>
 <html lang="en">
@@ -53,7 +53,7 @@ if (isset($_SESSION['Sesh'])){
                     <input type="submit" class="btn" name="submit" value="Login" required>
                 </div>  
             </form>
-			<a href="forgot_pass_form.php">Forgot Password?</a>
+			<a href="forgot_pass_form.php" id="forgotPass">Forgot Password?</a>
             <br><hr><br>
             
             <?php
@@ -92,15 +92,18 @@ if (isset($_SESSION['Sesh'])){
                     $conn->close();
                 }
             ?>
+
             <form action="sign_up.php" method="post">
                 <div class="field">
                     <input type="submit" class="btn" name="submit" value="Create Account" required>
                 </div>
-            </form>
+            </form> 
         </div>
       </div>
 </body>
 </html>
 <script>
 
+
+document.getElementById('join-btn').addEventListener('click', joinStream);
 </script>

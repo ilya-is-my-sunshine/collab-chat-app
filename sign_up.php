@@ -1,4 +1,10 @@
 <html lang="en">
+	<?php
+		session_start();
+		if (isset($_SESSION['Sesh'])){
+			header("Location: index.php");
+		}
+	?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,7 +33,6 @@
 					<span class="error-icon"></span>
 					<span class="success-icon"></span>
                 </div>
-
                 <div class="field input">
                     <label for="password">Password</label>
                     <input 
@@ -42,7 +47,6 @@
 					<span class="error-icon"></span>
 					<span class="success-icon"></span>
                 </div>
-
 				<div class="field input">
                     <label for="confirm_Password">Confirm Password</label>
                     <input 
@@ -58,42 +62,114 @@
 					<span class="error-icon"></span>
 					<span class="success-icon"></span>
                 </div>
-
 				<div class="field input">
-                    <label for="Security_Question">Security Question</label>
-					<select name="Security_Question" id="Security_Question" required>
+                    <label for="security_question">Security Question</label>
+					<select name="security_question" id="security_question" required>
 						<option value="" disabled >Select Security Question</option>
 						<option value="1">Where is your hometown?</option>
 						<option value="2">What is your pet's name?</option>
 						<option value="3">Who is your favorite anime character?</option>
 					</select>
+					<span class="error"></span>
+					<span class="error-icon"></span>
+					<span class="success-icon"></span>
                 </div>
-				<div class="field input">
-                    <label for="Security_Answer">Security Answer</label>
+                <div class="field input">
+                    <label for="security_answer">Security Answer</label>
                     <input 
 					required
-					minlength="1"
-					custommaxlength="40"
 					type="text" 
-					name="Security_Answer"
-					id="Security_Answer" 
-					autocomplete="off" 
+					name="security_answer" 
+					id="security_answer" 
+					autocomplete="off"
 					/>
 					<span class="error"></span>
 					<span class="error-icon"></span>
 					<span class="success-icon"></span>
                 </div>
+				<?php
+					include("database.php");
+					if ($_SERVER["REQUEST_METHOD"] == "POST") {
+						
+						if (isset($_POST["username"]) && !empty($_POST["username"]) &&
+							isset($_POST["password"]) && !empty($_POST["password"]) &&
+							isset($_POST["security_question"]) && !empty($_POST["security_question"]) &&
+							isset($_POST["security_answer"]) && !empty($_POST["security_answer"])
+						){
+							$username = $_POST["username"];
+							$password = $_POST["password"];
+							$security_question = $_POST["security_question"];
+							$security_answer = $_POST["security_answer"];
+							
+							$verify_query = mysqli_query($conn,"SELECT username FROM users_tb WHERE username='$username'");
+
+							if(mysqli_num_rows($verify_query)!= 0){
+								echo "<div class='message'>
+										<p>This username is taken <br> Try another One Please!</p>
+									</div>";
+							} else {
+								// Prepare the SQL statement
+								$stmt = $conn->prepare("INSERT INTO users_tb(username, password, security_question, security_answer) VALUES (?, ?, ?, ?)");
+								$stmt->bind_param("ssss", $username, $password, $security_question, $security_answer);
+								// Execute the statement
+								if ($stmt->execute()) {
+									echo "<div class='message'>
+											<p>Account Created Successfully</p>
+											</div>";
+									// Query executed successfully
+								} else {
+									echo "<div class='message'>
+											<p>Failed to create account</p>
+											</div>";// Query failed
+								}
+								// Close the statement
+								$stmt->close();
+							}
+
+						}
+						
+						/*
+						if ($username === "" or $password === ""){header("Location: login.php");}
+						// Prepare a parameterized query
+						$stmt = $conn->prepare("SELECT * FROM users_tb WHERE username =?");
+						$stmt->bind_param("s", $username);
+						$stmt->execute();
+						$result = $stmt->get_result();
+						$user_data = $result->fetch_assoc();
+						
+						$hashed_pass = password_hash($password, PASSWORD_DEFAULT); 
+						// Check if there is a matching record
+						if (isset($user_data) &&
+							($user_data['username'] == $username 
+							&& password_verify($user_data['password'], $hashed_pass))) {
+								// Verify the password using a password hashing algorithm
+								$_SESSION['Sesh'] = "IN_SESSION";
+								$_SESSION['username'] = $user_data['username'];
+								
+								header("Location: index.php");
+								
+								session_regenerate_id();
+								exit;		 
+						} else {
+							echo "<div class='message'>
+							<p>WRONG USERNAME OR PASSWORD</p>
+							</div>";
+						}*/
+
+						$conn->close();
+					}
+				?>
                 <div class="field">
                     <input type="submit" class="btn" name="submit" value="Sign Up" required>
                 </div>  
-				<a href="login.html">Already have an account?</a>
+				<a href="login.php">Already have an account?</a>
             </form>
         </div>
       </div>
 </body>
 </html>
 <script>
-        const validateForm = (formSelector, callback) => {
+    const validateForm = (formSelector, callback) => {
 	
 	const formElement = document.querySelector(formSelector);
 	
@@ -140,7 +216,7 @@
 
 	const validateSingleFormGroup = formGroup => {
 		const label = formGroup.querySelector('label');
-		const input = formGroup.querySelector('input, textarea');
+		const input = formGroup.querySelector('input, textarea, select');
 		const errorContainer = formGroup.querySelector('.error');
 		const errorIcon = formGroup.querySelector('.error-icon');
 		const successIcon = formGroup.querySelector('.success-icon');
@@ -192,7 +268,6 @@
 		} else {
 			console.log('Form is valid');
 			//event.preventDefault();
-			//callback(formElement);
 		}
 	});
 };
