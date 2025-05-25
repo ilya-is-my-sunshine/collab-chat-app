@@ -70,7 +70,6 @@ function appendMessage(msg, sender, isOwnMessage = false) {
     wrapper.appendChild(messageWrapper);
     chatBox.appendChild(wrapper);
     messageWrapper.appendChild(timeElem);
-
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
@@ -80,7 +79,6 @@ document.getElementById('messageIconBtn').addEventListener('click', () => {
     document.getElementById('textChat').style.display = 'flex';
     document.getElementById('messageIconBtn').style.display = 'none';
 });
-
 
 document.getElementById('closeChatBtn').addEventListener('click', () => {
     document.getElementById('textChat').style.display = 'none';
@@ -129,7 +127,7 @@ let joinStream = async () => {
 
     await joinAndDisplayLocalStream();
 
-    document.getElementById('room-tab-container').style.display = 'none';
+    document.getElementById('main').style.display = 'none';
     document.getElementById('stream-controls').style.display = 'flex';
     document.getElementById('stream-wrapper').style.height = "100%";
     document.getElementById('stream-wrapper').style.width = "100%";
@@ -184,7 +182,7 @@ let leaveAndRemoveLocalStream = async () => {
 
     await client.leave()
     document.getElementById('camerabtn').src= "camera.png";
-    document.getElementById('room-tab-container').style.display = 'flex'
+    document.getElementById('main').style.display = 'flex'
     document.getElementById('stream-controls').style.display = 'none'
     document.getElementById('stream-wrapper').style.height = "0";
     document.getElementById('stream-wrapper').style.width = "0";

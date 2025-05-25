@@ -26,7 +26,7 @@ if (!isset($_SESSION['Sesh'])){
         </div>
         <div class="username" id="username_placeholder">Username</div>
         </header>
-        <main>
+        <main id = "main">
         <div class="join-box">
             <h2>Room</h2>
             <input type="text" id = "room-input" placeholder="insert unique room code here..."/>
