@@ -3,6 +3,8 @@ session_start();
 if (isset($_SESSION['Sesh'])){
 	header("Location: index.php");
 }
+$_SESSION['recovery_step']=0;
+$_SESSION['recovery_user_details']='';
 ?>
 <html lang="en">
 <head>
@@ -103,7 +105,4 @@ if (isset($_SESSION['Sesh'])){
 </body>
 </html>
 <script>
-
-
-document.getElementById('join-btn').addEventListener('click', joinStream);
 </script>
