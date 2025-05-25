@@ -5,9 +5,9 @@ if (isset($_SESSION['Sesh'])){
 }
 $_SESSION['recovery_step']=0;
 $_SESSION['recovery_user_details']='';
-?>
+?> 
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
