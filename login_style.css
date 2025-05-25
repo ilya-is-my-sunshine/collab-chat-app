@@ -56,6 +56,14 @@ body{
     color: #ffffff;
 }
 
+.form-box h1{
+    font-size: 25pt;
+    font-weight:700;
+    color: white;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
 .form-box a{
     width: auto;
     margin: auto;
@@ -184,12 +192,22 @@ main{
 }
 .message{
     text-align: center;
-    background: #ffb8b8;
+    background: #f8c9c9;
     padding: 15px 0px;
-    border:2px solid #ff1818;
+    border:2px solid #cc0606;
     border-radius: 5px;
     margin-bottom: 10px;
-    color: rgb(252, 41, 41);
+    color: rgb(197, 11, 11);
+}
+
+.success_message{
+    text-align: center;
+    background: #bcfab0;
+    padding: 15px 0px;
+    border:2px solid rgb(20, 194, 4);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: rgb(17, 177, 3);
 }
 
 .error {
