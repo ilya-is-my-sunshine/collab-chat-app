@@ -46,19 +46,6 @@
   grid-template-columns: 1fr 30%;
 }
 
-#textChat{
-  display: flex;
-  flex-direction: column;
-  height: 96%;
-  width: 25%;
-  position: fixed;
-  top: 2%;
-  right: 2%;
-  z-index: 6;
-  background-color: #171717;
-  border-radius: 20px;
-  overflow: hidden;
-}
 
 #allChatContainer{
   flex: 1;
@@ -190,9 +177,7 @@ button{
   display: none;
 }
 
-#textChat {
-  display: none; 
-}
+
 #chatIconContainer {
   position: fixed;
   bottom: 20px;
@@ -388,18 +373,6 @@ body {
   z-index: 1000;
 }
 
-#textChat {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 300px;
-  background: #1e1e1e;
-  color: white;
-  border-radius: 8px;
-  display: none;
-  z-index: 1000;
-}
-
 #closeChatBtn {
   float: right;
   cursor: pointer;
@@ -409,7 +382,17 @@ body {
 }
 
 #textChat {
-    border-radius: 20px;
-    overflow: hidden;
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 900px;
+  display: none;
+  flex-direction: column;
+  background: #1e1e1e;
+  color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 1000;
 }
-

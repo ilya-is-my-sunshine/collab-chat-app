@@ -37,26 +37,27 @@ socket.on('receive-message', ({ message, username: sender }) => {
 function appendMessage(msg, sender, isOwnMessage = false) {
     const chatBox = document.getElementById('allChatContainer');
     
-    // Wrapper aligns message left or right
     const wrapper = document.createElement('div');
     wrapper.style.display = 'flex';
     wrapper.style.justifyContent = isOwnMessage ? 'flex-end' : 'flex-start';
 
-    // Inner wrapper stacks name and bubble vertically
     const messageWrapper = document.createElement('div');
     messageWrapper.className = 'messageWrapper';
 
-    // Sender name
     const senderElem = document.createElement('div');
     senderElem.className = 'senderName';
-    senderElem.innerText = sender;
 
-    // Message bubble
+    senderElem.innerText = isOwnMessage ? 'You' : sender;
+
+    senderElem.style.textAlign = isOwnMessage ? 'right' : 'left';
+    senderElem.style.fontWeight = 'bold';
+    senderElem.style.fontSize = '0.8em';
+    senderElem.style.marginBottom = '2px';
+
     const messageElem = document.createElement('div');
     messageElem.className = 'messageElem';
     messageElem.innerText = msg;
 
-    // Assemble message parts
     messageWrapper.appendChild(senderElem);
     messageWrapper.appendChild(messageElem);
     wrapper.appendChild(messageWrapper);
@@ -212,4 +213,3 @@ document.getElementById('join-btn').addEventListener('click', joinStream);
 document.getElementById('leave-btn').addEventListener('click', leaveAndRemoveLocalStream);
 document.getElementById('mic-btn').addEventListener('click', toggleMic);
 document.getElementById('camera-btn').addEventListener('click', toggleCamera);
-
