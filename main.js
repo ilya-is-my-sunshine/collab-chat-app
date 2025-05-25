@@ -58,10 +58,18 @@ function appendMessage(msg, sender, isOwnMessage = false) {
     messageElem.className = 'messageElem';
     messageElem.innerText = msg;
 
+    const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+    const timeElem = document.createElement('div');
+    timeElem.className = 'timestamp';
+    timeElem.innerText = time;
+    
+
+    // Assemble message parts
     messageWrapper.appendChild(senderElem);
     messageWrapper.appendChild(messageElem);
     wrapper.appendChild(messageWrapper);
     chatBox.appendChild(wrapper);
+    messageWrapper.appendChild(timeElem);
 
     chatBox.scrollTop = chatBox.scrollHeight;
 }
@@ -69,12 +77,10 @@ function appendMessage(msg, sender, isOwnMessage = false) {
 document.getElementById('messageIconBtn').addEventListener('click', () => {
     const chatTab = document.getElementById('textChat');
     chatTab.style.display = chatTab.style.display === 'none' ? 'flex' : 'none';
-});
-
-document.getElementById('messageIconBtn').addEventListener('click', () => {
     document.getElementById('textChat').style.display = 'flex';
     document.getElementById('messageIconBtn').style.display = 'none';
 });
+
 
 document.getElementById('closeChatBtn').addEventListener('click', () => {
     document.getElementById('textChat').style.display = 'none';
@@ -111,6 +117,7 @@ let joinStream = async () => {
     var inputCode = document.getElementById("room-input").value.trim();
     var inputName = SessionData.username;
 
+
     if (!inputName) {
         alert("Please enter your name.");
         return;
@@ -128,6 +135,8 @@ let joinStream = async () => {
     document.getElementById('stream-wrapper').style.width = "100%";
     document.getElementById('stream-wrapper').style.display = "grid";
     document.getElementById('messageIconBtn').style.display = 'flex';
+    document.getElementById('textChat').style.display = 'flex';
+    document.getElementById('messageIconBtn').style.display = 'none';
     socket.emit('join-room', { roomCode: currentRoomCode, username });
 
     await localTracks[0].setMuted(true);
@@ -205,6 +214,7 @@ let toggleCamera = async (e) => {
         document.getElementById('camerabtn').src= "cameraoff.png";
     }
 }
+
 
 
 

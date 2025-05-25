@@ -22,6 +22,9 @@
   word-wrap: break-word;
   font-size: 14px;
 }
+.timestamp {
+  font-size: 12px;
+}
 .own-message {
   align-self: flex-end;
   background-color: #c0ffd2;

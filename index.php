@@ -50,20 +50,22 @@ if (!isset($_SESSION['Sesh'])){
             <button id="camera-btn"><image image id = "camerabtn" src = "camera.png" height = "70vw"></button>
         </div>
     </div>
-   <div id="chatIconContainer">
-    <button id="messageIconBtn">💬</button>
-</div>
-<div id="textChat">
-    <div id="chatHeader">
-        Chat Room
-        <button id="closeChatBtn" title="Close Chat">×</button>
+
+
+    <div id="chatIconContainer">
+        <button id="messageIconBtn">💬</button>
     </div>
-    <div id="allChatContainer"></div>
-    <div id="userChatContainer">
-        <input id="chatInput" type="text" placeholder="Type a message...">
-        <button id="sendBtn">Send</button> 
+    <div id="textChat">
+        <div id="chatHeader">
+            Chat Room
+            <button id="closeChatBtn" title="Close Chat">×</button>
+        </div>
+        <div id="allChatContainer"></div>
+        <div id="userChatContainer">
+            <input id="chatInput" type="text" placeholder="Type a message...">
+            <button id="sendBtn">Send</button> 
+        </div>
     </div>
-</div>
 
 
 </body>
