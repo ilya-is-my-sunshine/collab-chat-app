@@ -22,6 +22,7 @@ if (isset($_SESSION['Sesh'])){
                     <span>Connectaru</span>
                 </div>
             </header>
+            <h1>Account Recovery</h1>
             <form action="" method="post" id='forgot_pass'>
             <?php
 
@@ -92,7 +93,8 @@ if (isset($_SESSION['Sesh'])){
 
                 $myQuestion = $questions[$row['security_question']];
                 
-                if( $row['security_answer'] == $_POST['security_answer']){
+                if( $row['security_answer'] == $_POST['security_answer']){//changing of password
+                    $_SESSION['recovery_step']=2;
                     echo <<<HTML
                     <div class="field input">
                         <label for="new_password">New Password</label>
@@ -236,7 +238,7 @@ if (isset($_SESSION['Sesh'])){
                     </script>
                     EOD;
 
-                } else {
+                } else { // failed to answer question
                     echo <<<HTML
                     <div class="field input">
                         <label for="security_answer">$myQuestion</label>
@@ -255,6 +257,22 @@ if (isset($_SESSION['Sesh'])){
                     echo $endingPart;
 
                 }
+            }  else if (isset($_POST['new_password']) && isset($_POST['confirm_new_password']) 
+                        && $_SESSION['recovery_step']==2){
+                $_SESSION['recovery_step']="";
+                $_SESSION['recovery_user_details']="";
+                
+                echo <<<'EOD'
+                                <div class="success_message">
+                                    PASSWORD HAS BEEN CHANGED
+                                </div>
+                                </form>
+                                    <a href="login.php" id="backtologin">Back to login</a>
+                                </div>
+                            </div>
+                        </body>
+                    </html>
+                EOD;
             } else /* if (empty($_POST['username']) && $_SESSION['recovery_step']==0)*/ { //initial step
                 echo <<<HTML
                     <div class="field input">

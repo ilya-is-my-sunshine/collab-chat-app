@@ -18,8 +18,6 @@ if (!isset($_SESSION['Sesh'])){
     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
 </head>
 <body>
-
-
     <div id="room-tab-container">
         <header>
         <div class="logo">
