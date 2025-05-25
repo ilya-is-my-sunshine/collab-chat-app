@@ -5,6 +5,7 @@
 	$db_name = "connectaru";		//database namin
 	$db_port = '3306';			// change this to your dabase port
 	
+
 	try {
 		$conn = mysqli_connect($db_server, $db_user, 
 								$db_pass, $db_name, $db_port);
