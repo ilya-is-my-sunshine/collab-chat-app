@@ -47,9 +47,9 @@ if (!isset($_SESSION['Sesh'])){
             <div id="textChatContainer"></div>
         </div>
         <div id="stream-controls">
-            <button id="leave-btn">Leave Stream</button>    
-            <button id="mic-btn">Mic On</button>
-            <button id="camera-btn">Camera on</button>
+            <button id="leave-btn"><image image id = "leavebtn" src = "endcall.png" height = "70vw"></button>    
+            <button id="mic-btn"><image id = "micbtn" src = "micoff.png" height = "70vw"></button>
+            <button id="camera-btn"><image image id = "camerabtn" src = "camera.png" height = "70vw"></button>
         </div>
     </div>
    <div id="chatIconContainer">

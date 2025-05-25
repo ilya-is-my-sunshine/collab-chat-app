@@ -33,7 +33,6 @@
   text-align: left;
 }
 
-
 .username {
   font-weight: bold;
   font-size: 11px;
@@ -142,20 +141,22 @@
 
 button{
     border:none;
-    background-color: cadetblue;
-    color:#fff;
-    padding:10px 20px;
-    font-size:16px;
-    margin:2px;
-    cursor: pointer;
+    padding:10px 8px;
+    background-color: transparent;  
 }
 
 #stream-controls{
+    padding: 10px 10px;
+    background-color: #171717;
+    border-radius: 16px;
+    border: none;
+    height: 10vh;
+    width: 28vh;
     position: fixed;
     bottom: 20px; 
     left: 35%;
     transform: translateX(-50%);
-    display: none; 
+    display: block; 
     justify-content: center;
     align-items: center;
     z-index: 10;

@@ -126,12 +126,11 @@ let joinStream = async () => {
     document.getElementById('stream-wrapper').style.height = "100%";
     document.getElementById('stream-wrapper').style.width = "100%";
     document.getElementById('stream-wrapper').style.display = "grid";
-    document.getElementById('messageIconBtn').style.display = 'flex'; 
+    document.getElementById('messageIconBtn').style.display = 'flex';
     socket.emit('join-room', { roomCode: currentRoomCode, username });
 
     await localTracks[0].setMuted(true);
-    document.getElementById('mic-btn').innerText = 'Mic off';
-    document.getElementById('mic-btn').style.backgroundColor = '#EE4B2B';
+    document.getElementById('micbtn').src= "micoff.png";
 };
 
 
@@ -174,6 +173,7 @@ let leaveAndRemoveLocalStream = async () => {
     }
 
     await client.leave()
+    document.getElementById('camerabtn').src= "camera.png";
     document.getElementById('room-tab-container').style.display = 'flex'
     document.getElementById('stream-controls').style.display = 'none'
     document.getElementById('stream-wrapper').style.height = "0";
@@ -188,24 +188,20 @@ let leaveAndRemoveLocalStream = async () => {
 let toggleMic = async (e) => {
     if (localTracks[0].muted){
         await localTracks[0].setMuted(false)
-        e.target.innerText = 'Mic on'
-        e.target.style.backgroundColor = 'cadetblue'
+        document.getElementById('micbtn').src= "mic.png";
     }else{
         await localTracks[0].setMuted(true)
-        e.target.innerText = 'Mic off'
-        e.target.style.backgroundColor = '#EE4B2B'
+        document.getElementById('micbtn').src= "micoff.png";
     }
 }
 
 let toggleCamera = async (e) => {
     if(localTracks[1].muted){
         await localTracks[1].setMuted(false)
-        e.target.innerText = 'Camera on'
-        e.target.style.backgroundColor = 'cadetblue'
+        document.getElementById('camerabtn').src= "camera.png";
     }else{
         await localTracks[1].setMuted(true)
-        e.target.innerText = 'Camera off'
-        e.target.style.backgroundColor = '#EE4B2B'
+        document.getElementById('camerabtn').src= "cameraoff.png";
     }
 }
 
