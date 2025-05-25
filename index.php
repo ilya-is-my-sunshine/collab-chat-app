@@ -83,8 +83,8 @@ if (!isset($_SESSION['Sesh'])){
 <script>
     const SessionData = <?php echo json_encode($SessionData); ?>;
     console.log(SessionData.username);
-    document.getElementById('username_placeholder').innerHTML=SessionData.username;        
-    document.getElementById('username_placehold').innerHTML=SessionData.username;        
+    document.getElementById('username_placeholder').innerHTML=SessionData.username;
+    document.getElementById('username_placehold').innerHTML=SessionData.username;      
 </script>
 <script src='main.js'></script>
 </html>
