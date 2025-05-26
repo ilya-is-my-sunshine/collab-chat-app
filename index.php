@@ -32,7 +32,7 @@ if (!isset($_SESSION['Sesh'])){
             <h2>Room</h2>
             <input type="text" id = "room-input" placeholder="Insert any room code here..."/>
             <button id = "join-btn">Join Room</button>
-            <form action="logout.php" method="post" class="logout-container">
+            <form action="logout.php" method="post">
                 <button id="logout-btn" type="submit">Logout</button>
             </form>
         </div>

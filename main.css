@@ -347,7 +347,7 @@ body {
 #room-tab-container .join-box h2 {
   font-size: 90px;
   color: #ffffcc;
-  font-family: Rubik Doodle Triangles;
+  font-family: Audiowide;
   margin-bottom: 20px;
   text-shadow: 5px 2px #000;
 }
@@ -371,18 +371,9 @@ body {
 #room-input:focus::placeholder{
   color: transparent;
 }
-#logout-btn{
-  padding: 14px 2px;
-  margin: 3px 3px;
-  background-color: #ffffcc;
-  color: #000;
-  font-size: 22px;
-  font-weight: bold;
-  padding: 12px 40px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+
+#room-tab-container #join-btn {
+  margin-bottom: 20px;
 }
 
 #room-tab-container .join-box button {
@@ -390,9 +381,10 @@ body {
   color: #000;
   font-size: 22px;
   font-weight: bold;
+  width: 100%;
   padding: 12px 40px;
   border: none;
-  border-radius: 30px;
+  border-radius: 15px;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
