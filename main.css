@@ -107,7 +107,6 @@
   color: #ffffcc;
   background-color: #1e1e1e;
   border: 2px solid #ffffcc;
-  align-content: center;
   font-size: 16px;
   padding: 3px 10px;
   margin: 3px;
@@ -120,6 +119,10 @@
   min-width: 50px;
   border-radius: 10px;
   padding: 0 2px;
+}
+
+#userChatContainer i{
+  margin-top: 5px;
 }
 
 #stream-wrapper{
@@ -176,12 +179,30 @@ button:hover{
     bottom: 20px; 
     left: 35%;
     transform: translateX(-50%);
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
+    display: flex; 
+    flex-wrap: nowrap;
+    justify-items: space-evenly;
     align-items: center;
     z-index: 10;
     margin-top: 0;
+}
+
+#stream-controls button {
+  width: 70%; 
+  height: 70%; 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  padding: 0; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+#stream-controls img {
+  max-height: 100%; 
+  max-width: 100%; 
+  height: auto; 
+  width: auto;
 }
 
 #messageIconBtn {

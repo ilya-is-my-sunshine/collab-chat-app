@@ -136,7 +136,7 @@ let joinStream = async () => {
     await joinAndDisplayLocalStream();
 
     document.getElementById('room-tab-container').style.display = 'none';
-    document.getElementById('stream-controls').style.display = 'grid';
+    document.getElementById('stream-controls').style.display = 'flex';
     document.getElementById('stream-wrapper').style.height = "100%";
     document.getElementById('stream-wrapper').style.width = "100%";
     document.getElementById('stream-wrapper').style.display = "grid";
