@@ -128,7 +128,7 @@ let joinStream = async () => {
         alert("Please enter your name.");
         return;
     }
-    document.getElementById('messageIconBtn').style.display = 'flex'; 
+    
 
     currentRoomCode = inputCode || currentRoomCode;
     username = inputName;

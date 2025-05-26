@@ -22,7 +22,7 @@ body{
     flex-direction: column;
     padding: 25px 25px;
     border-radius: 20px;
-    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+    box-shadow: 0 0 128px 0 rgba(250, 247, 247, 0.1),
                 0 32px 64px -48px rgba(0,0,0,0.5);
 }
 
@@ -81,6 +81,9 @@ body{
     background-color: #171717; /* Blue color */
 }
 
+#main-form{
+
+}
 
 .form-box{
     width: 450px;
