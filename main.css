@@ -60,6 +60,24 @@
   white-space: pre-wrap;
   box-sizing: border-box;
 }
+
+#textChat {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 25%;
+  height: 80vh;
+  min-width: 175px;
+  display: none;
+  flex-direction: column;
+  background: #272727;
+  color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
 #chatHeader {
   font-size: 20px;
   font-weight: bold;
@@ -75,20 +93,21 @@
 #userChatContainer{
   height: 10%;
   width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: 1fr 50px;
   align-items: center;
-  justify-content: space-evenly;
-  padding: 10px;
+  justify-items: center;
+  padding-right: 10px;
 }
 
 #userChatContainer input{
   height: 70%;
-  width: 70%;
+  width: 90%;
   border-radius: 10px;
   color: #ffffcc;
   background-color: #1e1e1e;
   border: 2px solid #ffffcc;
+  align-content: center;
   font-size: 16px;
   padding: 3px 10px;
   margin: 3px;
@@ -96,8 +115,11 @@
 
 #userChatContainer button{
   height: 70%;
-  width: 30%;
+  width: 90%;
+  font-size: 20pt;
+  min-width: 50px;
   border-radius: 10px;
+  padding: 0 2px;
 }
 
 #stream-wrapper{
@@ -146,7 +168,6 @@ button:hover{
 }
 
 #stream-controls{
-    padding: 10px 10px;
     background-color: #272727;
     border-radius: 16px;
     border: none;
@@ -156,7 +177,8 @@ button:hover{
     bottom: 20px; 
     left: 35%;
     transform: translateX(-50%);
-    display: block; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
     z-index: 10;
@@ -369,7 +391,7 @@ body {
   color: #ffffcc ;
   background-color: #293042;
   border-radius: 15px;
-   visibility: visible;
+  visibility: visible;
   display: inline-block;
 }
 
