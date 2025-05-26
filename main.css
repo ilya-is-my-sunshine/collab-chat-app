@@ -468,5 +468,4 @@ body {
   border-radius: 20px;
   overflow: hidden;
   z-index: 1000;
-  animation: shadowPulse 15s infinite;
 }

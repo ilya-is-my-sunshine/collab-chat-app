@@ -60,7 +60,7 @@ if (!isset($_SESSION['Sesh'])){
             <button id="camera-btn"><image image id = "camerabtn" src = "camera.png" height = "70vw"></button>
         </div>
     </main>
-    /div>
+    </div>
 
 
     <div id="chatIconContainer">
