@@ -16,6 +16,7 @@ if (!isset($_SESSION['Sesh'])){
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="icon" href="logo.png" type="image/png">
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
 </head>
 <body>
@@ -74,7 +75,7 @@ if (!isset($_SESSION['Sesh'])){
         <div id="allChatContainer"></div>
         <div id="userChatContainer">
             <input id="chatInput" type="text" placeholder="Type a message...">
-            <button id="sendBtn">Send</button> 
+            <button id="sendBtn"><i class='bx  bx-send'></i> </button> 
         </div>
     </div>
 
