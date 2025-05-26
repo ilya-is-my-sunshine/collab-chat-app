@@ -64,7 +64,7 @@ if (!isset($_SESSION['Sesh'])){
 
 
     <div id="chatIconContainer">
-        <button id="messageIconBtn">💬</button>
+        <button id="messageIconBtn"><image src = "chat.png" height = "30vw"></button>
     </div>
     <div id="textChat">
         <div id = "chatHeader">
