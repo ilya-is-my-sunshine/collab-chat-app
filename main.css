@@ -309,7 +309,7 @@ body {
   color: #ffffcc;
   font-family: Audiowide;
   margin-bottom: 20px;
-  text-shadow: 5px 2px #000;
+  text-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 #room-tab-container .join-box input {
@@ -317,7 +317,7 @@ body {
   padding: 14px;
   border: 3px solid #ffffcc;
   border-radius: 14px;
-  background-color: #293042;
+  background-color: #131a29;
   color: #ffffcc;
   font-size: 25px;
   margin-bottom: 20px;
@@ -331,10 +331,12 @@ body {
 #room-input:focus::placeholder{
   color: transparent;
 }
+#room-tab-container #join-btn{
+  margin-bottom: 20px;
+}
 
 #room-tab-container .join-box button {
   background-color: #ffffcc;
-  margin-bottom: 10px;
   color: #000;
   font-size: 22px;
   width: 100%;
