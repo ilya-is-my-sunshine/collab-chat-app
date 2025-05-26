@@ -146,7 +146,7 @@ button:hover{
 
 #stream-controls{
     padding: 10px 10px;
-    background-color: #171717;
+    background-color: #272727;
     border-radius: 16px;
     border: none;
     height: 10vh;
@@ -225,7 +225,7 @@ button:hover{
 }
 
 body {
-  background-color: #333;
+  background-color: #1a1a1a;
   color: #fff;
   height: 100vh;
 }
@@ -242,7 +242,7 @@ body {
 }
 
 #room-tab-container header {
-  background-color: #1a1a1a;
+  background-color: #111111;
   padding: 20px 40px;
   display: flex;
   height: 8vh;
@@ -250,7 +250,7 @@ body {
   align-items: center;
 }
 #stream-wrapper header{
-  background-color: #1a1a1a;
+  background-color: #111111;
   padding: 20px 40px;
   display: flex;
   height: 8vh;
@@ -301,15 +301,55 @@ body {
   padding: 40px;
   border-radius: 24px;
   text-align: center;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  animation: shadowPulse 15s infinite;
+
 }
+@keyframes shadowPulse {
+  0% {
+  box-shadow: 0 0 20px 5px #3e00b3,
+    0 0 5px #3e00b3,
+    0 0 100px #3e00b3;
+    
+  }
+  20% {
+    box-shadow: 0 0 20px 5px limegreen,
+        0 0 5px limegreen,
+        0 0 100px limegreen;
+  }
+  40% {
+  box-shadow: 0 0 20px 5px yellow,
+    0 0 5px yellow,
+    0 0 100px yellow;
+  }
+  60% {
+    box-shadow: 0 0 20px 5px deepskyblue,
+        0 0 5px deepskyblue,
+        0 0 100px deepskyblue;
+  }
+  80% {
+  box-shadow: 0 0 20px 5px red,
+    0 0 5px red,
+    0 0 100px red;
+  }
+  99% {
+  box-shadow: 0 0 20px 5px blue,
+    0 0 5px blue,
+    0 0 100px blue;
+  }
+  100% {
+  box-shadow: 0 0 20px 5px #3e00b3,
+    0 0 5px #3e00b3,
+    0 0 100px #3e00b3;
+  }
+}
+
 
 #room-tab-container .join-box h2 {
   font-size: 90px;
   color: #ffffcc;
-  font-family: Audiowide;
+  font-family: Rubik Doodle Triangles;
   margin-bottom: 20px;
-  text-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  text-shadow: 5px 2px #000;
 }
 
 #room-tab-container .join-box input {
@@ -317,7 +357,7 @@ body {
   padding: 14px;
   border: 3px solid #ffffcc;
   border-radius: 14px;
-  background-color: #131a29;
+  background-color: #293042;
   color: #ffffcc;
   font-size: 25px;
   margin-bottom: 20px;
@@ -331,23 +371,31 @@ body {
 #room-input:focus::placeholder{
   color: transparent;
 }
-#room-tab-container #join-btn{
-  margin-bottom: 20px;
+#logout-btn{
+  padding: 14px 2px;
+  margin: 3px 3px;
+  background-color: #ffffcc;
+  color: #000;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 #room-tab-container .join-box button {
   background-color: #ffffcc;
   color: #000;
   font-size: 22px;
-  width: 100%;
   font-weight: bold;
   padding: 12px 40px;
   border: none;
-  border-radius: 10px;
+  border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
- 
 
 #room-tab-container .join-box button:hover {
   background-color: #ffffcc;
@@ -422,7 +470,7 @@ body {
   height: 80vh;
   display: none;
   flex-direction: column;
-  background: #1e1e1e;
+  background: #272727;
   color: white;
   border-radius: 20px;
   overflow: hidden;
