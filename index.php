@@ -28,13 +28,14 @@ if (!isset($_SESSION['Sesh'])){
         <div class="username" id="username_placeholder">Username</div>
         </header>
         <main id = "main">
-        <div class="join-box">
-            <h2>Room</h2>
-            <input type="text" id = "room-input" placeholder="Insert any room code here..."/>
-            <button id = "join-btn">Join Room</button>
-            <form action="logout.php" method="post">
-                <button id="logout-btn" type="submit">Logout</button>
-            </form>
+            <div class="join-box">
+                <h2>Room</h2>
+                <input type="text" id = "room-input" placeholder="insert unique room code here..."/>
+                <button id = "join-btn">Join Room</button>
+                <form action="logout.php" method="post">
+                    <button id="logout-btn" type="submit">Logout</button>
+                </form>
+            </div>
         </div>
         </main>
     </div>
@@ -59,11 +60,11 @@ if (!isset($_SESSION['Sesh'])){
             <button id="camera-btn"><image image id = "camerabtn" src = "camera.png" height = "70vw"></button>
         </div>
     </main>
-    </div>
+    /div>
 
 
     <div id="chatIconContainer">
-        <button id="messageIconBtn">💬</button>
+        <button id="messageIconBtn"><image src = "chat.png" height = "30vw"></button>
     </div>
     <div id="textChat">
         <div id = "chatHeader">
