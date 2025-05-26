@@ -136,7 +136,7 @@ let joinStream = async () => {
     await joinAndDisplayLocalStream();
 
     document.getElementById('room-tab-container').style.display = 'none';
-    document.getElementById('stream-controls').style.display = 'flex';
+    document.getElementById('stream-controls').style.display = 'grid';
     document.getElementById('stream-wrapper').style.height = "100%";
     document.getElementById('stream-wrapper').style.width = "100%";
     document.getElementById('stream-wrapper').style.display = "grid";
@@ -146,7 +146,7 @@ let joinStream = async () => {
     document.getElementById('textChatContainer').style.display = 'block'; 
     document.getElementById('text-chat-handler').style.gridTemplateColumns = "1fr 30%";
     document.getElementById('stream-controls').style.left = '35%'; 
-    
+
     socket.emit('join-room', { roomCode: currentRoomCode, username });
 
     await localTracks[0].setMuted(true);

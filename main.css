@@ -145,7 +145,6 @@ button:hover{
 }
 
 #stream-controls{
-    padding: 10px 10px;
     background-color: #272727;
     border-radius: 16px;
     border: none;
@@ -155,7 +154,8 @@ button:hover{
     bottom: 20px; 
     left: 35%;
     transform: translateX(-50%);
-    display: block; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
     z-index: 10;
