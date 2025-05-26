@@ -152,6 +152,7 @@
     background-color: #203A49;
     border-radius: 50px;
     overflow: hidden;
+    animation: glowingBorder 20s linear infinite;
 }
 
 .video-player{
@@ -185,6 +186,7 @@ button:hover{
     align-items: center;
     z-index: 10;
     margin-top: 0;
+    animation: pulsingBorder 3s linear infinite;
 }
 
 #stream-controls button {
@@ -222,6 +224,7 @@ button:hover{
     cursor: pointer;
     transition: all 0.3s ease;
     display: none;
+    z-index:1000;
 }
 #messageIconBtn:hover {
     background-color: #ffff99 !important;
@@ -292,6 +295,8 @@ body {
   height: 8vh;
   justify-content: space-between;
   align-items: center;
+  animation: shadowPulse 30s infinite;
+
 }
 #stream-wrapper header{
   background-color: #111111;
@@ -300,6 +305,8 @@ body {
   height: 8vh;
   justify-content: space-between;
   align-items: center;
+  animation: shadowPulse 30s infinite;
+
 }
 
 .logo {
@@ -345,46 +352,8 @@ body {
   padding: 40px;
   border-radius: 24px;
   text-align: center;
-  animation: shadowPulse 15s infinite;
+  animation: shadowPulse 30s infinite;
 
-}
-@keyframes shadowPulse {
-  0% {
-  box-shadow: 0 0 20px 5px #3e00b3,
-    0 0 5px #3e00b3,
-    0 0 100px #3e00b3;
-    
-  }
-  20% {
-    box-shadow: 0 0 20px 5px limegreen,
-        0 0 5px limegreen,
-        0 0 100px limegreen;
-  }
-  40% {
-  box-shadow: 0 0 20px 5px yellow,
-    0 0 5px yellow,
-    0 0 100px yellow;
-  }
-  60% {
-    box-shadow: 0 0 20px 5px deepskyblue,
-        0 0 5px deepskyblue,
-        0 0 100px deepskyblue;
-  }
-  80% {
-  box-shadow: 0 0 20px 5px red,
-    0 0 5px red,
-    0 0 100px red;
-  }
-  99% {
-  box-shadow: 0 0 20px 5px blue,
-    0 0 5px blue,
-    0 0 100px blue;
-  }
-  100% {
-  box-shadow: 0 0 20px 5px #3e00b3,
-    0 0 5px #3e00b3,
-    0 0 100px #3e00b3;
-  }
 }
 
 
@@ -458,6 +427,8 @@ body {
     font-weight: bold;
     border-bottom: 1px solid #444;
     position: relative;
+    z-index:1000;
+
 }
 
 #closeChatBtn {
@@ -468,6 +439,7 @@ body {
     cursor: pointer;
     padding: 5px 10px;
     transition: color 0.2s, background-color 0.2s;
+
 }
 
 #closeChatBtn:hover {
@@ -495,4 +467,92 @@ body {
   font-size: 20px;
   padding: 0 8px;
   color: white;
+}
+
+#textChat {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 25%;
+  height: 80vh;
+  display: none;
+  flex-direction: column;
+  background: #272727;
+  color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 1001;
+  animation: pulsingBorder 3s infinite;
+
+}
+
+@keyframes shadowPulse {
+  0% {
+  box-shadow: 0 0 20px 5px #3e00b3,
+    0 0 5px #3e00b3,
+    0 0 100px #3e00b3;
+    
+  }
+  20% {
+    box-shadow: 0 0 20px 5px limegreen,
+        0 0 5px limegreen,
+        0 0 100px limegreen;
+  }
+  40% {
+  box-shadow: 0 0 20px 5px yellow,
+    0 0 5px yellow,
+    0 0 100px yellow;
+  }
+  60% {
+    box-shadow: 0 0 20px 5px deepskyblue,
+        0 0 5px deepskyblue,
+        0 0 100px deepskyblue;
+  }
+  80% {
+  box-shadow: 0 0 20px 5px red,
+    0 0 5px red,
+    0 0 100px red;
+  }
+  99% {
+  box-shadow: 0 0 20px 5px blue,
+    0 0 5px blue,
+    0 0 100px blue;
+  }
+  100% {
+  box-shadow: 0 0 20px 5px #3e00b3,
+    0 0 5px #3e00b3,
+    0 0 100px #3e00b3;
+  }
+}
+
+@keyframes glowingBorder {
+  0% {
+
+    box-shadow: 0 0 7px red;
+  }
+  33% {
+
+    box-shadow: 0 0 7px lime;
+  }
+  66% {
+
+    box-shadow: 0 0 7px blue;
+  }
+  100% {
+
+    box-shadow: 0 0 7px red;
+  }
+}
+@keyframes pulsingBorder {
+  0% {
+
+    box-shadow: 0 0 10px #3e00b3;
+  }
+  30% {
+    box-shadow: 0 0 1px black;
+  }
+  100%{
+    box-shadow: 0 0 10px #3e00b3;
+  }
 }
